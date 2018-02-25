@@ -1,5 +1,5 @@
 # Temperature sensor with mongooseOS
-Script sends temperature and humidity for DHT Shield and WEMOS D1 mini to MQTT broker
+Script sends temperature and humidity from WEMOS D1 mini with DHT Shield to MQTT broker
 
 ## Prerequisites
 Install mongooseOS (https://mongoose-os.com/docs/quickstart/setup.html)
