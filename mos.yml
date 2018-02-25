@@ -12,7 +12,7 @@ sources:
 filesystem:
   - fs
 libs:
-  # libs necessary for the current app
+  # libs necessary for the current app. This is a minimal configuration.
   - origin: https://github.com/mongoose-os-libs/mjs
   - origin: https://github.com/mongoose-os-libs/wifi
   - origin: https://github.com/mongoose-os-libs/mqtt
@@ -30,11 +30,16 @@ manifest_version: 2017-05-18
 
 config_schema:
   - ["mqtt.enable", true]
-  - ["mqtt.server", ""]
+  # IP address and port at which mqtt server is working
+  - ["mqtt.server", "127.0.0.1:1883"]
   - ["wifi.sta.enable", true]
-  - ["wifi.sta.ssid", ""]
-  - ["wifi.sta.pass", ""]
+  # SSID of wifi the board should be connect to
+  - ["wifi.sta.ssid", "SSID"]
+  # PASSWORD of WIFI the board should be connect to
+  - ["wifi.sta.pass", "PASSWORD"]
   - ["wifi.ap.enable", false]
   - ["app", "o", {title: "App Settings"}]
+  # Settings for duration of deep sleep (time in microseconds). In this sample deep sleep lasts 15mins
   - ["app.deepsleep", "i", 900000000, {title: "Time to Deep Sleep"}] 
+  # MQTT topic at which the sensor data should be sent
   - ["app.mqtttopic", "s", "home/sensors/room", {title: "Mqtt Topic"}]
