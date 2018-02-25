@@ -7,7 +7,7 @@ Install mongooseOS (https://mongoose-os.com/docs/quickstart/setup.html)
 ## Deployment
 Configurate in [mos.yml](mos.yml):
 * WIFI SSID and password
-* MQTT broker adress
+* MQTT broker address
 * MQTT topic the data should be sent to
 * Time for deep sleep
 
