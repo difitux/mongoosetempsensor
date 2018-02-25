@@ -1,0 +1,40 @@
+author: difitux
+description: DHT shield wth WEMOS D1 mini V3.0.0
+version: 1.0
+platform: esp8266
+
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+sources:
+  - src
+filesystem:
+  - fs
+libs:
+  # libs necessary for the current app
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/mqtt
+  - origin: https://github.com/mongoose-os-libs/sntp
+  - origin: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
+  - origin: https://github.com/mongoose-os-libs/adc
+  - origin: https://github.com/mongoose-os-libs/dht
+
+  
+tags:
+  - js
+  - hw
+
+manifest_version: 2017-05-18
+
+config_schema:
+  - ["mqtt.enable", true]
+  - ["mqtt.server", ""]
+  - ["wifi.sta.enable", true]
+  - ["wifi.sta.ssid", ""]
+  - ["wifi.sta.pass", ""]
+  - ["wifi.ap.enable", false]
+  - ["app", "o", {title: "App Settings"}]
+  - ["app.deepsleep", "i", 900000000, {title: "Time to Deep Sleep"}] 
+  - ["app.mqtttopic", "s", "home/sensors/room", {title: "Mqtt Topic"}]
